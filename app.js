@@ -15,6 +15,7 @@ const Newgame=()=>{
     compscore=0;
     userscorenum.innerText="0"
     compscorenum.innerText="0";
+    enablechoices();
 }
 
 const gencompchoice=()=>{
@@ -27,9 +28,21 @@ const draw=()=>{
   finalmsg.innerText="Game is draw🤝";
 }
 
+const disablechoices=()=>{
+    choices.forEach(choice =>{
+        choice.style.pointerEvents="none";
+    })
+}
+
+const enablechoices=()=>{
+    choices.forEach(choice =>{
+        choice.style.pointerEvents="auto";
+    })
+}
 const showwinneru=()=>{
     msgcontainer.classList.remove("hide");
     msg.innerText="Congratulations! Adrita you have beaten Hemadry as always😍";
+     disablechoices();
     confetti();
 }
 
@@ -39,6 +52,8 @@ const showwinnerc=()=>{
     msgcontainer.classList.remove("hide");
     msg.innerText="Miracle! Hemadry won😘";
     confetti();
+    disablechoices();
+   
 }
 
 
