@@ -16,6 +16,7 @@ const Newgame=()=>{
     userscorenum.innerText="0"
     compscorenum.innerText="0";
     enablechoices();
+    finalmsg.innerText="Tap the circles to play";
 }
 
 const gencompchoice=()=>{
